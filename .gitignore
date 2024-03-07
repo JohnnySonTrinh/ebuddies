@@ -1,4 +1,6 @@
 venv/
 db.sqlite3
-.env
+env.py
 projectboard.txt
+__pycache__/
+.vscode
