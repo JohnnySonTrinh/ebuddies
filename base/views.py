@@ -2,8 +2,20 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def home(request):
-    return render(request, 'home.html')
+threads = [
+    {'id': 1, 'name': 'League of Legends'},
+    {'id': 2, 'name': 'Valorant'},
+    {'id': 3, 'name': 'Teamfight Tactics'},
+]
 
-def thread(request):
-    return render(request, 'thread.html')
+def home(request):
+    context = {'threads': threads}
+    return render(request, 'base/home.html', context)
+
+def thread(request, pk):
+    thread = None
+    for i in threads:
+        if i['id'] == pk:
+            thread = i
+    context = {'thread': thread}
+    return render(request, 'base/thread.html', context)

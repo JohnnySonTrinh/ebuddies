@@ -1,0 +1,1 @@
+web gunicorn ebuddies.wsgi:apllication --log-file -
