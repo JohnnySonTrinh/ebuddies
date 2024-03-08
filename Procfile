@@ -1,1 +1,1 @@
-web gunicorn ebuddies.wsgi:apllication --log-file -
+web: gunicorn ebuddies.wsgi:application --log-file -
