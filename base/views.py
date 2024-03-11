@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.db.models import Q
+from django.contrib.auth.forms import User
+from django.contrib.auth import authenticate, login, logout
 from .models import Thread, Topic
 from .forms import ThreadForm
 
@@ -10,6 +13,32 @@ from .forms import ThreadForm
 #    {'id': 2, 'name': 'Valorant'},
 #    {'id': 3, 'name': 'Teamfight Tactics'},
 #]
+
+def loginPage(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            user = User.objects.get(username=username)
+        except:
+            messages.error(request, 'Username does not exist')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Username OR password is incorrect')
+        
+    context = {}
+    return render(request, 'base/login_register.html', context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
 
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
