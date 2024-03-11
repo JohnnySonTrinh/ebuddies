@@ -79,16 +79,18 @@ def home(request):
 def thread(request, pk):
     thread = Thread.objects.get(id=pk)
     comments = thread.message_set.all().order_by('-created')
-
+    participants = thread.participants.all()
+    
     if request.method == 'POST':
         message = Message.objects.create(
             user=request.user,
             thread=thread,
             body=request.POST.get('body')
         )
+        thread.participants.add(request.user)
         return redirect('thread', pk=thread.id)
 
-    context = {'thread': thread, 'comments': comments}
+    context = {'thread': thread, 'comments': comments, 'participants': participants}
     return render(request, 'base/thread.html', context)
 
 @login_required(login_url='login')
