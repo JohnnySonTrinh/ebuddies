@@ -2,6 +2,45 @@
 
 {% block content %}
 
-<h3>{{thread.name}}</h3>
+<style>
+    .thread-container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+</style>
+
+<div class="thread-container">
+
+    <div>
+
+        <h1>{{thread.name}}</h1>
+
+        <p>{{thread.description}}</p>
+
+        <div class="comment-wrapper">
+            <h3>conversation</h3>
+            <hr>
+
+            {% for message in comments %}
+            <div>
+                <small>@{{message.user}} {{message.created|timesince}} ago </small>
+                <p>{{message.body}}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if request.user.is_authenticated %}
+        <div class="comment-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="body" placeholder="Add a comment">
+            </form>
+        </div>
+        {% endif %}
+
+    </div>
+
+
+</div>
 
 {% endblock %}

@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.contrib.auth.forms import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-from .models import Thread, Topic
+from .models import Thread, Topic, Message
 from .forms import ThreadForm
 from django.http import HttpResponse
 
@@ -78,7 +78,17 @@ def home(request):
 
 def thread(request, pk):
     thread = Thread.objects.get(id=pk)
-    context = {'thread': thread}
+    comments = thread.message_set.all().order_by('-created')
+
+    if request.method == 'POST':
+        message = Message.objects.create(
+            user=request.user,
+            thread=thread,
+            body=request.POST.get('body')
+        )
+        return redirect('thread', pk=thread.id)
+
+    context = {'thread': thread, 'comments': comments}
     return render(request, 'base/thread.html', context)
 
 @login_required(login_url='login')
