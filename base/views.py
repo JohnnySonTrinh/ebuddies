@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Thread
+from django.db.models import Q
+from .models import Thread, Topic
 from .forms import ThreadForm
 
 # Create your views here.
@@ -11,8 +12,17 @@ from .forms import ThreadForm
 #]
 
 def home(request):
-    threads = Thread.objects.all()
-    context = {'threads': threads}
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    threads = Thread.objects.filter(
+        Q(topic__name__icontains=q) |
+        Q(name__icontains=q) |
+        Q(description__icontains=q)
+        )
+
+    topics = Topic.objects.all()
+    thread_count = threads.count()
+
+    context = {'threads': threads, 'topics': topics, 'thread_count': thread_count}
     return render(request, 'base/home.html', context)
 
 def thread(request, pk):
