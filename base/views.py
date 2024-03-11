@@ -80,7 +80,7 @@ def thread(request, pk):
     thread = Thread.objects.get(id=pk)
     comments = thread.message_set.all().order_by('-created')
     participants = thread.participants.all()
-    
+
     if request.method == 'POST':
         message = Message.objects.create(
             user=request.user,
@@ -127,8 +127,23 @@ def updateThread(request, pk):
 def deleteThread(request, pk):
     thread = Thread.objects.get(id=pk)
 
+    if request.user != thread.host:
+        return HttpResponse('You are not allowed here!')
+
     if request.method == 'POST':
         thread.delete()
         return redirect('home')
 
     return render(request, 'base/delete.html', {'obj':thread})
+
+@login_required(login_url='login')
+def deleteMessage(request, pk):
+    message = Message.objects.get(id=pk)
+
+    if request.user != message.user:
+        return HttpResponse('You are not allowed here!')
+    
+    if request.method == 'POST':
+        message.delete()
+        return redirect('home')
+    return render(request, 'base/delete.html', {'obj': message})
