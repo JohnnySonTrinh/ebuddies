@@ -72,7 +72,7 @@ def home(request):
 
     topics = Topic.objects.all()
     thread_count = threads.count()
-    comments = Message.objects.all()
+    comments = Message.objects.all().filter(Q(thread__topic__name__icontains=q))
 
     context = {'threads': threads, 'topics': topics, 'thread_count': thread_count, 'comments': comments}
     return render(request, 'base/home.html', context)
