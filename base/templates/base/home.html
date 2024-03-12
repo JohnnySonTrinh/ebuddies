@@ -55,6 +55,10 @@
             <small>replied to "{{message.thread}}"</small>
 
             <p>{{message}}</p>
+            {% if request.user == message.user %}
+            <a href="{% url 'delete-message' message.id %}">Delete</a>
+            {% endif %}
+            <hr>
         </div>
         {% endfor %}
     </div>
