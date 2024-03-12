@@ -72,13 +72,14 @@ def home(request):
 
     topics = Topic.objects.all()
     thread_count = threads.count()
+    comments = Message.objects.all()
 
-    context = {'threads': threads, 'topics': topics, 'thread_count': thread_count}
+    context = {'threads': threads, 'topics': topics, 'thread_count': thread_count, 'comments': comments}
     return render(request, 'base/home.html', context)
 
 def thread(request, pk):
     thread = Thread.objects.get(id=pk)
-    comments = thread.message_set.all().order_by('-created')
+    comments = thread.message_set.all()
     participants = thread.participants.all()
 
     if request.method == 'POST':
