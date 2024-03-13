@@ -7,15 +7,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from .models import Thread, Topic, Message
 from .forms import ThreadForm
-from django.http import HttpResponse
 
 # Create your views here.
-
-#threads = [
-#    {'id': 1, 'name': 'League of Legends'},
-#    {'id': 2, 'name': 'Valorant'},
-#    {'id': 3, 'name': 'Teamfight Tactics'},
-#]
 
 def loginPage(request):
     page = 'login'
@@ -35,6 +28,7 @@ def loginPage(request):
 
         if user is not None:
             login(request, user)
+            messages.success(request, 'Welcome ' + username)
             return redirect('home')
         else:
             messages.error(request, 'Username OR password is incorrect')
@@ -89,6 +83,7 @@ def thread(request, pk):
             body=request.POST.get('body')
         )
         thread.participants.add(request.user)
+        messages.success(request, 'Your comment has been posted')
         return redirect('thread', pk=thread.id)
 
     context = {'thread': thread, 'comments': comments, 'participants': participants}
@@ -117,7 +112,8 @@ def createThread(request):
             name=request.POST.get('name'),
             description=request.POST.get('description')
         )
-        return redirect('home')
+        messages.success(request, 'Thread has been created')
+        return redirect('thread', pk=Thread.objects.last().id)
         
     context = {'form': form, 'topics': topics}
     return render(request, 'base/thread_form.html', context)
@@ -129,7 +125,9 @@ def updateThread(request, pk):
     thread_topic = thread.topic.name
     topics = Topic.objects.all()
     if request.user != thread.host:
-        return HttpResponse('You are not allowed here!')
+        # change this to a return
+        messages.error(request, 'You are not allowed here!')
+        return redirect('home')
 
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
@@ -138,6 +136,7 @@ def updateThread(request, pk):
         thread.description = request.POST.get('description')
         thread.topic = topic
         thread.save()
+        messages.success(request, 'Thread has been updated')
         return redirect('home')
 
     context = {'form': form, 'topics': topics, 'thread_topic': thread_topic}
@@ -148,10 +147,12 @@ def deleteThread(request, pk):
     thread = Thread.objects.get(id=pk)
 
     if request.user != thread.host:
-        return HttpResponse('You are not allowed here!')
+        messages.error(request, 'You are not allowed here!')
+        return redirect('home')
 
     if request.method == 'POST':
         thread.delete()
+        messages.success(request, 'Thread has been deleted')
         return redirect('home')
 
     return render(request, 'base/delete.html', {'obj':thread})
@@ -161,9 +162,11 @@ def deleteMessage(request, pk):
     message = Message.objects.get(id=pk)
 
     if request.user != message.user:
-        return HttpResponse('You are not allowed here!')
+        messages.error(request, 'You are not allowed here!')
+        return redirect('home')
     
     if request.method == 'POST':
         message.delete()
+        messages.success(request, 'Message has been deleted')
         return redirect('home')
     return render(request, 'base/delete.html', {'obj': message})
