@@ -1,4 +1,4 @@
-# [EBUDDIES](https://ebuiddes-2a1b96b4c6d6.herokuapp.com/)
+# [EBUDDIES](https://ebuddies-42967ce5447d.herokuapp.com)
 
 
 ## UX
