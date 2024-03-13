@@ -126,6 +126,7 @@ def createThread(request):
 def updateThread(request, pk):
     thread = Thread.objects.get(id=pk)
     form = ThreadForm(instance=thread)
+    thread_topic = thread.topic.name
     topics = Topic.objects.all()
     if request.user != thread.host:
         return HttpResponse('You are not allowed here!')
@@ -139,7 +140,7 @@ def updateThread(request, pk):
         thread.save()
         return redirect('home')
 
-    context = {'form': form, 'topics': topics}
+    context = {'form': form, 'topics': topics, 'thread_topic': thread_topic}
     return render(request, 'base/thread_form.html', context)
 
 @login_required(login_url='login')
