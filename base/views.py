@@ -106,33 +106,40 @@ def userProfile(request, pk):
 @login_required(login_url='login')
 def createThread(request):
     form = ThreadForm()
-
+    topics = Topic.objects.all()
     if request.method == 'POST':
-        form = ThreadForm(request.POST)
-        if form.is_valid():
-            thread = form.save(commit=False)
-            thread.host = request.user
-            thread.save()
-            return redirect('home')
+        topic_name = request.POST.get('topic')
+        topic, created = Topic.objects.get_or_create(name=topic_name) 
         
-    context = {'form': form}
+        Thread.objects.create(
+            host=request.user,
+            topic=topic,
+            name=request.POST.get('name'),
+            description=request.POST.get('description')
+        )
+        return redirect('home')
+        
+    context = {'form': form, 'topics': topics}
     return render(request, 'base/thread_form.html', context)
 
 @login_required(login_url='login')
 def updateThread(request, pk):
     thread = Thread.objects.get(id=pk)
     form = ThreadForm(instance=thread)
-
+    topics = Topic.objects.all()
     if request.user != thread.host:
         return HttpResponse('You are not allowed here!')
 
     if request.method == 'POST':
-        form = ThreadForm(request.POST, instance=thread)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
+        topic_name = request.POST.get('topic')
+        topic, created = Topic.objects.get_or_create(name=topic_name) 
+        thread.name = request.POST.get('name')
+        thread.description = request.POST.get('description')
+        thread.topic = topic
+        thread.save()
+        return redirect('home')
 
-    context = {'form': form}
+    context = {'form': form, 'topics': topics}
     return render(request, 'base/thread_form.html', context)
 
 @login_required(login_url='login')
