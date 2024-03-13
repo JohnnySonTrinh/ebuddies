@@ -5,8 +5,10 @@ urlpatterns = [
     path('login/', views.loginPage, name='login'),
     path('logout/', views.logoutUser, name='logout'),
     path('register/', views.registerPage, name='register'),
+
     path('', views.home, name='home'),
     path('thread/<str:pk>/', views.thread, name='thread'),
+    path('profile/<str:pk>/', views.userProfile, name='user-profile'),
 
     path('create-thread/', views.createThread, name='create-thread'),
     path('update-thread/<str:pk>/', views.updateThread, name='update-thread'),

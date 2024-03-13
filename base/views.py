@@ -94,6 +94,15 @@ def thread(request, pk):
     context = {'thread': thread, 'comments': comments, 'participants': participants}
     return render(request, 'base/thread.html', context)
 
+def userProfile(request, pk):
+    user = User.objects.get(id=pk)
+    threads = user.thread_set.all()
+    comments = user.message_set.all()
+    topics = Topic.objects.all()
+    context = {'user': user, 'threads': threads, 'comments': comments, 'topics': topics}
+    return render(request, 'base/profile.html', context)
+
+
 @login_required(login_url='login')
 def createThread(request):
     form = ThreadForm()
