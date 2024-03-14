@@ -107,14 +107,14 @@ def createThread(request):
         topic_name = request.POST.get('topic')
         topic, created = Topic.objects.get_or_create(name=topic_name) 
         
-        Thread.objects.create(
+        thread = Thread.objects.create(
             host=request.user,
             topic=topic,
             name=request.POST.get('name'),
             description=request.POST.get('description')
         )
         messages.success(request, 'Thread has been created')
-        return redirect('thread', pk=Thread.objects.last().id)
+        return redirect('thread', thread.id)
         
     context = {'form': form, 'topics': topics}
     return render(request, 'base/thread_form.html', context)
