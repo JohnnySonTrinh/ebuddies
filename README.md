@@ -8,6 +8,7 @@ Welcome to EBUDDIES, community platform designed to connect gamers with shared i
 
 ![screenshot](documentation/mockup.png)
 
+
 ## UX
 
 The design of **Ebuddies** was planned to create an intuitive, engaging, and seamless experience for our users.
@@ -69,7 +70,69 @@ I've used CSS `:root` variables to easily update the global colour scheme by cha
 - As a site administrator, I should be able to ban or suspend users who violate community guidelines, so that I can maintain the integrity and safety of the community.
 - As a site administrator, I should be able to update and implement new features based on user feedback, so that I can continuously improve the user experience and meet the evolving needs of the community.
 
-## Wireframe
+## Wireframes
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+
+### Mobile Wireframes
+
+<details>
+<summary> Click here to see the Mobile Wireframes </summary>
+
+Home
+  - ![screenshot](documentation\wireframes\wireframe-mobile-home.png)
+
+Profle
+  - ![screenshot](documentation\wireframes\wireframe-mobile-profile.png)
+
+Log in
+  - ![screenshot](documentation\wireframes\wireframe-mobile-log-in.png)
+
+Sign up
+  - ![screenshot](documentation\wireframes\wireframe-mobile-sign-up.png)
+
+
+</details>
+
+### Tablet Wireframes
+
+<details>
+<summary> Click here to see the Tablet Wireframes </summary>
+
+Home
+  - ![screenshot](documentation\wireframes\wireframe-tablet-home.png)
+
+Profle
+  - ![screenshot](documentation\wireframes\wireframe-tablet-profile.png)
+
+Log in
+  - ![screenshot](documentation\wireframes\wireframe-tablet-log-in.png)
+
+Sign up
+  - ![screenshot](documentation\wireframes\wireframe-tablet-sign-up.png)
+
+
+</details>
+
+### Desktop Wireframes
+
+<details>
+<summary> Click here to see the Desktop Wireframes </summary>
+
+Home
+  - ![screenshot](documentation\wireframes\wireframe-desktop-home.png)
+
+Profle
+  - ![screenshot](documentation\wireframes\wireframe-desktop-profile.png)
+
+Log in
+  - ![screenshot](documentation\wireframes\wireframe-desktop-log-in.png)
+
+Sign up
+  - ![screenshot](documentation\wireframes\wireframe-desktop-sign-up.png)
+
+</details>
 
 ## Testing
 
