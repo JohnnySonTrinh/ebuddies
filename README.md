@@ -21,7 +21,7 @@ The design of **Ebuddies** was planned to create an intuitive, engaging, and sea
 
 I used [coolors.co](https://coolors.co/71c6dd-3f4156-51546e-696d97-e5e5e5-8b8b8b-b2bdbd-2d2d39-5dd693-fc4b0b) to generate my colour palette.
 
-![screenshot](documentation\coolors.png)
+![screenshot](documentation/coolors.png)
 
 I've used CSS `:root` variables to easily update the global colour scheme by changing only one value, instead of everywhere in the CSS file.
 
