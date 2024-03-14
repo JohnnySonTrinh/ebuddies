@@ -154,6 +154,9 @@ Sign up
 ## Testing
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
+> [!NOTE]  
+> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
 ### Heroku Deployment
 
 This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
