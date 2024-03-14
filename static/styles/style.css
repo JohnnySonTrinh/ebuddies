@@ -526,7 +526,7 @@ a {
 }
 
 .form__group select {
-  color: var(--clr-gray);
+  color: var(--clr-success);
   font-weight: 400;
 }
 
@@ -884,16 +884,6 @@ a {
   color: var(--clr-main);
   font-weight: 500;
   margin-bottom: 1rem;
-}
-
-.profile__about {
-  margin-top: 2rem;
-}
-
-.profile__about h3 {
-  text-transform: uppercase;
-  color: var(--clr-dark-light);
-  margin-bottom: 0.5rem;
 }
 
 .profile-page .roomList__header {
