@@ -50,3 +50,14 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | ebuddies | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/ebuddies/urls.py) | ![screenshot](documentation/validation/py-urls-ebuddies.png) | NO ERRORS |
 | root | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/manage.py) | ![screenshot](documentation/validation/py-manage.png) |NO ERRORS |
 
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Home | Profile | Log In | Register | Thread | Topic | Notes |
+| ------- | ---- | ------- | ------ | -------- | ------ | ----- | ----- |
+| Chrome | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/chrome-profile.png) | ![screenshot](documentation/browsers/chrome-login.png) | ![screenshot](documentation/browsers/chrome-signup.png) | ![screenshot](documentation/browsers/chrome-thread.png) | ![screenshot](documentation/browsers/chrome-topics.png) | Works as expected |
+| Firefox | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/firefox-profile.png) | ![screenshot](documentation/browsers/firefox-login.png) | ![screenshot](documentation/browsers/firefox-signup.png) | ![screenshot](documentation/browsers/firefox-thread.png) | ![screenshot](documentation/browsers/firefox-topics.png) | Works as expected |
+| Opera GX | ![screenshot](documentation/browsers/opera-gx-home.png) | ![screenshot](documentation/browsers/opera-gx-profile.png) | ![screenshot](documentation/browsers/opera-gx-login.png) | ![screenshot](documentation/browsers/opera-gx-signup.png) | ![screenshot](documentation/browsers/opera-gx-thread.png) | ![screenshot](documentation/browsers/opera-gx-topics.png) | Works as expected |
+| Safari | ![screenshot](documentation/browsers/safari-home.png) | ![screenshot](documentation/browsers/safari-profile.png) | ![screenshot](documentation/browsers/safari-login.png) | ![screenshot](documentation/browsers/safari-signup.png) | ![screenshot](documentation/browsers/safari-thread.png) | ![screenshot](documentation/browsers/safari-topics.png) | Works as expected |
+
