@@ -134,6 +134,68 @@ Sign up
 
 </details>
 
+## Features
+
+Ebuddies Features
+
+### Existing Features
+
+- **User Registration and Log-in**
+
+    - Users can sign up/log in for EBUDDIES to connect with like-minded individuals.
+
+![screenshot](documentation/features/feature01.png)
+
+![screenshot](documentation/features/feature02.png)
+
+- **Community Topics and Discussion Threads**
+
+    - The platform offers various forums based on different interests. Within these Topics, users can start discussion threads or contribute to existing ones. This feature is the core of the community, allowing for the exchange of ideas, advice, and experiences.
+
+![screenshot](documentation/features/feature03.png)
+
+- **Recent Activities**
+
+    - Users can easily stay up-to-date with the latest discussions in their communities, ensuring they're always in the loop.
+
+![screenshot](documentation/features/feature04.png)
+
+- **Browse and Search Topics**
+
+    - Enhances users' ability to discover new topics and threads that match their interests, encouraging exploration and engagement with new communities.
+
+![screenshot](documentation/features/feature05.png)
+
+- **Create and Update Threads**
+
+    - A straightforward process for creating and update threads ensures that even users new to the platform can easily share their thoughts and questions with the community.
+
+![screenshot](documentation/features/feature06.png)
+
+- **Post Messages in Threads**
+
+    - The Post Messages in Threads feature enables users to actively participate in discussions by writing and submitting messages within any thread on EBUDDIES. This core functionality fosters interactive dialogue, allowing users to share insights, ask questions, and provide support, thereby enhancing the vibrancy and connectivity of the community.
+
+![screenshot](documentation/features/feature07.png)
+
+- **View User Profiles**
+
+    - The View User Profiles feature on EBUDDIES allows users to view their own profile as well as the profiles of other community members. This functionality enhances the social aspect of the platform.
+
+![screenshot](documentation/features/feature08.png)
+
+
+### Future Features
+
+- Change Avatar/images
+    - User can upload images/profile picture as a avatar.
+- Update password
+    - User can update password in settings.
+- About/bio
+    - User can have a description about themself.
+- Tags
+    - User can have tags in there threads.
+
 ## Tools & Technologies Used
 
 - [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
