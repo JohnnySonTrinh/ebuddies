@@ -3,18 +3,35 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
+# This class is used to create a Topic instance.
 class Topic(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
 
+
+# This class is used to create a Thread instance.
 class Thread(models.Model):
-    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True, blank=True)
+    host = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
+    topic = models.ForeignKey(
+        Topic, on_delete=models.SET_NULL,
+        null=True,
+        blank=True
+    )
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
-    participants = models.ManyToManyField(User, related_name='participants', blank=True)
+    participants = models.ManyToManyField(
+        User,
+        related_name='participants',
+        blank=True
+    )
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -23,7 +40,9 @@ class Thread(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
+# This class is used to create a Message instance.
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
