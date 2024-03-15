@@ -201,16 +201,6 @@ a {
   right: 3.5px;
 }
 
-.scroll::-webkit-scrollbar {
-  width: 0.6rem;
-  background-color: rgb(41, 41, 46);
-}
-
-.scroll::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background-color: var(--clr-gray);
-}
-
 .dropdown-menu {
   z-index: 111;
   position: absolute;
@@ -1161,5 +1151,4 @@ a {
   display: block;
   font-weight: 500;
   color: var(--clr-main);
-  font-weight: 1.4rem;
 }
