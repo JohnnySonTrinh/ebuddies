@@ -476,6 +476,4 @@ You can fork this repository by using the following steps:
 
 - I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
 - I would like to thank the [Code Institute Swedish Slack community](https://code-institute-room.slack.com) for the moral support and testing.
-- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
 - Speical thanks to my dog Loke for being my "rubber duck debugging" tool
