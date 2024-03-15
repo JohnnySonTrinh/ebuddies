@@ -48,5 +48,5 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | base | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/base/urls.py) | ![screenshot](documentation/validation/py-urls.png) | NO ERRORS |
 | base | views.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/base/views.py) | ![screenshot](documentation/validation/py-views.png) | NO ERRORS |
 | ebuddies | urls.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/ebuddies/urls.py) | ![screenshot](documentation/validation/py-urls-ebuddies.png) | NO ERRORS |
-|  | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/manage.py) | ![screenshot](documentation/validation/py-manage.png) | NO ERRORS |
+| root | manage.py | [PEP8 CI](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/JohnnySonTrinh/ebuddies/main/manage.py) | ![screenshot](documentation/validation/py-manage.png) |NO ERRORS |
 
