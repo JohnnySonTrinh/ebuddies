@@ -259,7 +259,7 @@ a {
   gap: 1rem;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 789px) {
   .mobile-menu {
     display: none;
   }
