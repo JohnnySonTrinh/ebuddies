@@ -81,16 +81,16 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 <summary> Click here to see the Mobile Wireframes </summary>
 
 Home
-  - ![screenshot](documentation\wireframes\wireframe-mobile-home.png)
+  - ![screenshot](documentation/wireframes/wireframe-mobile-home.png)
 
 Profle
-  - ![screenshot](documentation\wireframes\wireframe-mobile-profile.png)
+  - ![screenshot](documentation/wireframes/wireframe-mobile-profile.png)
 
 Log in
-  - ![screenshot](documentation\wireframes\wireframe-mobile-log-in.png)
+  - ![screenshot](documentation/wireframes/wireframe-mobile-log-in.png)
 
 Sign up
-  - ![screenshot](documentation\wireframes\wireframe-mobile-sign-up.png)
+  - ![screenshot](documentation/wireframes/wireframe-mobile-sign-up.png)
 
 
 </details>
@@ -101,16 +101,16 @@ Sign up
 <summary> Click here to see the Tablet Wireframes </summary>
 
 Home
-  - ![screenshot](documentation\wireframes\wireframe-tablet-home.png)
+  - ![screenshot](documentation/wireframes/wireframe-tablet-home.png)
 
 Profle
-  - ![screenshot](documentation\wireframes\wireframe-tablet-profile.png)
+  - ![screenshot](documentation/wireframes/wireframe-tablet-profile.png)
 
 Log in
-  - ![screenshot](documentation\wireframes\wireframe-tablet-log-in.png)
+  - ![screenshot](documentation/wireframes/wireframe-tablet-log-in.png)
 
 Sign up
-  - ![screenshot](documentation\wireframes\wireframe-tablet-sign-up.png)
+  - ![screenshot](documentation/wireframes/wireframe-tablet-sign-up.png)
 
 
 </details>
@@ -121,16 +121,16 @@ Sign up
 <summary> Click here to see the Desktop Wireframes </summary>
 
 Home
-  - ![screenshot](documentation\wireframes\wireframe-desktop-home.png)
+  - ![screenshot](documentation/wireframes/wireframe-desktop-home.png)
 
 Profle
-  - ![screenshot](documentation\wireframes\wireframe-desktop-profile.png)
+  - ![screenshot](documentation/wireframes/wireframe-desktop-profile.png)
 
 Log in
-  - ![screenshot](documentation\wireframes\wireframe-desktop-log-in.png)
+  - ![screenshot](documentation/wireframes/wireframe-desktop-log-in.png)
 
 Sign up
-  - ![screenshot](documentation\wireframes\wireframe-desktop-sign-up.png)
+  - ![screenshot](documentation/wireframes/wireframe-desktop-sign-up.png)
 
 </details>
 
