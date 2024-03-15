@@ -1,7 +1,9 @@
 {% extends 'main.html' %}
 
 {% block content %}
+<!-- Auth Container -->
 <main class="auth layout">
+  <!-- Login -->
   {% if page == 'login' %}
   <div class="container">
     <div class="layout__box">
@@ -38,6 +40,7 @@
       </div>
     </div>
   </div>
+  <!-- Register -->
   {% else %}
   <div class="container">
     <div class="layout__box">
