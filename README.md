@@ -184,7 +184,6 @@ Ebuddies Features
 
 ![screenshot](documentation/features/feature08.png)
 
-
 ### Future Features
 
 - Change Avatar/images
@@ -213,10 +212,109 @@ Ebuddies Features
 - [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) used for creating wireframes.
 - [![Canva](https://img.shields.io/badge/Canva-grey?logo=canva&logoColor=00C4CC)](https://www.canva.com/p/canvawireframes) used for creating wireframes.
 
+## Database Design
+
+Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models.
+Understanding the relationships between different tables can save time later in the project.
+
+![screenshot](/documentation/erd.png)
+
+```python
+class Topic(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class Thread(models.Model):
+    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True)
+    participants = models.ManyToManyField(User, related_name='participants', blank=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-updated', '-created']
+
+    def __str__(self):
+        return self.name
+    
+class Message(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
+    body = models.TextField()
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-updated', '-created']
+
+    def __str__(self):
+        return self.body[0:50]
+```
+
+## Agile Development Process
+
+### GitHub Projects
+
+[GitHub Projects](https://github.com/JohnnySonTrinh/ebuddies/projects) served as an Agile tool for this project.
+It isn't a specialized tool, but with the right tags and project creation/issue assignments, it can be made to work.
+
+Through it, user stories, issues, and milestone tasks were planned, then tracked on a weekly basis using the basic Kanban board.
+
+![screenshot](documentation/gh-projects.png)
+
+### GitHub Issues
+
+[GitHub Issues](https://github.com/JohnnySonTrinh/ebuddies/issues) served as an another Agile tool.
+There, I used my own **User Story Template** to manage user stories.
+
+It also helped with milestone iterations on a weekly basis.
+
+- [Open Issues](https://github.com/JohnnySonTrinh/ebuddies/issues) [![GitHub issues](https://img.shields.io/github/issues/JohnnySonTrinh/ebuddies)](https://github.com/JohnnySonTrinh/ebuddies/issues)
+
+    ![screenshot](documentation/gh-issues-open.png)
+
+- [Closed Issues](https://github.com/JohnnySonTrinh/ebuddies/issues?q=is%3Aissue+is%3Aclosed) [![GitHub closed issues](https://img.shields.io/github/issues-closed/JohnnySonTrinh/ebuddies)](https://github.com/JohnnySonTrinh/ebuddies/issues?q=is%3Aissue+is%3Aclosed)
+
+    ![screenshot](documentation/gh-issues-closed.png)
+
+### MoSCoW Prioritization
+
+I've decomposed my Epics into stories prior to prioritizing and implementing them.
+Using this approach, I was able to apply the MoSCow prioritization and labels to my user stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered (*max 60% of stories*)
+- **Should Have**: adds significant value, but not vital (*the rest ~20% of stories*)
+- **Could Have**: has small impact if left out (*20% of stories*)
+- **Won't Have**: not a priority for this iteration
+
 ## Testing
 
 > [!NOTE]  
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Deployment
+
+The live deployed application can be found deployed on [Heroku](https://ebuddies-42967ce5447d.herokuapp.com).
+
+### PostgreSQL Database
+
+This project uses a [Code Institute PostgreSQL Database](https://dbs.ci-dbs.net).
+
+To obtain my own Postgres Database from Code Institute, I followed these steps:
+
+- Signed-in to the CI LMS using my email address.
+- An email was sent to me with my new Postgres Database.
+
+> [!CAUTION]  
+> - PostgreSQL databases by Code Institute are only available to CI Students.
+> - You must acquire your own PostgreSQL database through some other method
+> if you plan to clone/fork this repository.
+> - Code Institute students are allowed a maximum of 8 databases.
+> - Databases are subject to deletion after 18 months.
 
 ### Heroku Deployment
 
@@ -343,3 +441,41 @@ You can fork this repository by using the following steps:
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
+### Local VS Deployment
+
+#### Environment Variables
+- **Local**: Environment variables might be set directly in me development environment or stored in a .env file that is not committed to version control for security reasons.
+- **Deployment**: On Heroku, environment variables should be set through the platform's settings (Config Vars) to keep sensitive information like database URLs, secret keys, and third-party API keys secure.
+#### Database
+- **Local**: I use SQLite as your database for simplicity and ease of setup in a local development environment.
+- **Deployment**: On Heroku, I use a more robust database like PostgreSQL. Heroku offers its own PostgreSQL service, which can be easily integrated into the project.
+
+## Credits
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
+| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
+| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
+| [Dennis Ivy](https://www.youtube.com/@DennisIvy) | entire site | Django tutorials and how to deploy on Heroku |
+| [Django docs](https://docs.djangoproject.com/en/5.0/) | entire site | Django/python syntax |
+| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
+
+### Media
+
+| Source | Location | Type | Notes |
+| --- | --- | --- | --- |
+| [Squoosh](https://squoosh.app/) | entire site | image | tool for image compression |
+| [Canva](https://www.canva.com/) | entire site | image | tool for edit images |
+| [Lucid Software](https://www.youtube.com/watch?v=xsg9BDiwiJE) | Database | ERD | tutorial for lucichart and ERD |
+| [Markdown Builder](https://tim.2bn.dev/markdown-builder) | README and TESTING | tool | tool to help generate the Markdown files |
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN) for his support throughout the development of this project.
+- I would like to thank the [Code Institute Swedish Slack community](https://code-institute-room.slack.com) for the moral support and testing.
+- I would like to thank my partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
+- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+- Speical thanks to my dog Loke for being my "rubber duck debugging" tool
