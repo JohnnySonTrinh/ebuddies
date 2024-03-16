@@ -72,7 +72,7 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | 4K Monitor (DevTools) | ![screenshot](documentation/responsiveness/4k-home.png) | ![screenshot](documentation/responsiveness/4k-thread.png) | ![screenshot](documentation/responsiveness/4k-profile.png) | Scaling starts to have minor issues |
 | Desktop (Windows)| ![screenshot](documentation/responsiveness/desktop-home.png) | ![screenshot](documentation/responsiveness/desktop-thread.png) | ![screenshot](documentation/responsiveness/desktop-profile.png) | Works as expected |
 | Laptop (Mac) | ![screenshot](documentation/responsiveness/mac-home.png) | ![screenshot](documentation/responsiveness/mac-thread.png) | ![screenshot](documentation/responsiveness/mac-profile.png) | Works as expected |
-| iPhone 14 | ![screenshot](documentation/responsiveness/iphone-home.png) | ![screenshot](documentation/responsiveness/iphone-thread.png) | ![screenshot](documentation/responsiveness/profile.png) | Works as expected |
+| iPhone 14 | ![screenshot](documentation/responsiveness/iphone-home.png) | ![screenshot](documentation/responsiveness/iphone-thread.png) | ![screenshot](documentation/responsiveness/iphone-profile.png) | Works as expected |
 | iPad | ![screenshot](documentation/responsiveness/ipad-home.png) | ![screenshot](documentation/responsiveness/ipad-thread.png) | ![screenshot](documentation/responsiveness/ipad-profile.png) | Works as expected |
 
 ## Lighthouse Audit
