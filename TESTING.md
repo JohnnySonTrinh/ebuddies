@@ -61,6 +61,30 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Opera GX | ![screenshot](documentation/browsers/opera-gx-home.png) | ![screenshot](documentation/browsers/opera-gx-profile.png) | ![screenshot](documentation/browsers/opera-gx-login.png) | ![screenshot](documentation/browsers/opera-gx-signup.png) | ![screenshot](documentation/browsers/opera-gx-thread.png) | ![screenshot](documentation/browsers/opera-gx-topics.png) | Works as expected |
 | Safari | ![screenshot](documentation/browsers/safari-home.png) | ![screenshot](documentation/browsers/safari-profile.png) | ![screenshot](documentation/browsers/safari-login.png) | ![screenshot](documentation/browsers/safari-signup.png) | ![screenshot](documentation/browsers/safari-thread.png) | ![screenshot](documentation/browsers/safari-topics.png) | Works as expected |
 
+## Responsiveness
+
+I've tested my deployed project on multiple devices to check for responsiveness issues.
+
+| Device | Home | Thread | Profile | Notes |
+| ------ | ---- | ----- | ------- | ----- |
+| Mobile (DevTools) | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/mobile-thread.png) | ![screenshot](documentation/responsiveness/mobile-profile.png) | Works as expected |
+| Tablet (DevTools) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/tablet-thread.png) | ![screenshot](documentation/responsiveness/tablet-profile.png) | Works as expected |
+| 4K Monitor (DevTools) | ![screenshot](documentation/responsiveness/4k-home.png) | ![screenshot](documentation/responsiveness/4k-thread.png) | ![screenshot](documentation/responsiveness/4k-profile.png) | Scaling starts to have minor issues |
+| Desktop (Windows)| ![screenshot](documentation/responsiveness/desktop-home.png) | ![screenshot](documentation/responsiveness/desktop-thread.png) | ![screenshot](documentation/responsiveness/desktop-profile.png) | Works as expected |
+| Laptop (Mac) | ![screenshot](documentation/responsiveness/mac-home.png) | ![screenshot](documentation/responsiveness/mac-thread.png) | ![screenshot](documentation/responsiveness/mac-profile.png) | Works as expected |
+| iPhone 14 | ![screenshot](documentation/responsiveness/iphone-home.png) | ![screenshot](documentation/responsiveness/iphone-thread.png) | ![screenshot](documentation/responsiveness/profile.png) | Works as expected |
+| iPad | ![screenshot](documentation/responsiveness/ipad-home.png) | ![screenshot](documentation/responsiveness/ipad-thread.png) | ![screenshot](documentation/responsiveness/ipad-profile.png) | Works as expected |
+
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+
+| Page | Mobile | Desktop | Notes |
+| --- | --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/lh-moblie-home.png) | ![screenshot](documentation/lighthouse/lh-desktop-home.png) | Some minor warnings |
+| Thread | ![screenshot](documentation/lighthouse/lh-mobile-thread.png) | ![screenshot](documentation/lighthouse/lh-desktop-thread.png) | Accessibility warnings (desktop) |
+| Profile | ![screenshot](documentation/lighthouse/lh-mobile-profile.png) | ![screenshot](documentation/lighthouse/lh-desktop-profile.png) | Some minor warnings |
+
 ## Automated Testing
 
 I have conducted a series of automated tests on my application.
