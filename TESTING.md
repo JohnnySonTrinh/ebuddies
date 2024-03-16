@@ -85,6 +85,40 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Thread | ![screenshot](documentation/lighthouse/lh-mobile-thread.png) | ![screenshot](documentation/lighthouse/lh-desktop-thread.png) | Accessibility warnings (desktop) |
 | Profile | ![screenshot](documentation/lighthouse/lh-mobile-profile.png) | ![screenshot](documentation/lighthouse/lh-desktop-profile.png) | Some minor warnings |
 
+## Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+
+| Page | User Action | Expected Result | Pass/Fail | Comments |
+| --- | --- | --- | --- | --- |
+| Home | | | | |
+| | Click on Logo | Redirection to Home page | Pass | User account |
+| | Click on Avatar in navbar | Redirection to user profile page | Pass | User account |
+| | Click on More in Topics | Redirection to topics page | Pass | User account |
+| | Click on Create Thread in Home page | Redirection to create thread page | Pass | User account |
+| | Click on Settings in navbar | Redirection to update user page | Pass | User account |
+| | Click on Logout in navbar | Redirection to home page | Pass | User account |
+| | Click on Logout in navbar | Redirection to home page | Pass | User account |
+| | Click on Create Thread in Home page | Redirection to Login page | Pass | No User account |
+| Sign Up | | | | |
+| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
+| | Enter valid password (twice) | Field will only accept password format | Pass | |
+| | Click on Sign Up button | Asks user to confirm email page | Pass |  |
+| | Click on the Login link | Redirection to Login page | Pass | |
+| | Enter valid password | Field will only accept password format | Pass | |
+| | Click Login button | Redirects user to home page | Pass | |
+| Log Out | | | | |
+| | Click Confirm Logout button | Redirects user to home page | Pass | |
+| Profile | | | | |
+| | Click on Profile button | User will be redirected to the Profile page | Pass | |
+| | Click on the Edit button | User will be redirected to the edit profile page | Pass | |
+| | Brute forcing the URL to get to another user's profile | User should be given an error | Pass | Redirects user back to own profile |
+| Thread | | | | |
+|  | Click on any of the username | User will be redirected to the users profile | Pass | |
+|  | Click on Arrow left button | User will be redirected to Home Page | Pass | |
+
+
 ## Automated Testing
 
 I have conducted a series of automated tests on my application.
@@ -204,3 +238,7 @@ The successful execution of all unit tests for the eBuddies application models i
 
     - To fix this, the long strings are broken up using parentheses which allow Python to automatically concatenate the string literals that are next to each other. Each part of the string is on a new line, ensuring that no line goes over the 79-character limit.
 
+
+> [!NOTE]  
+> There are no remaining bugs that I am aware of.
+>>>>>>> Stashed changes
