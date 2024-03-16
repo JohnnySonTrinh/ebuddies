@@ -193,3 +193,14 @@ python manage.py test
 
 The successful execution of all unit tests for the eBuddies application models indicates robust and reliable model behavior according to the defined test cases. This provides a solid foundation for further development and refactoring with confidence in the stability of existing functionalities.
 
+## Bugs
+
+- 89: E501 line too long (91 > 79 characters)
+- 92: E501 line too long (81 > 79 characters)
+- 95: E501 line too long (82 > 79 characters)
+- 98: E501 line too long (83 > 79 characters)
+
+    ![screenshot](documentation/bugs/bug01.png)
+
+    - To fix this, the long strings are broken up using parentheses which allow Python to automatically concatenate the string literals that are next to each other. Each part of the string is on a new line, ensuring that no line goes over the 79-character limit.
+
