@@ -238,6 +238,11 @@ The successful execution of all unit tests for the eBuddies application models i
 
     - To fix this, the long strings are broken up using parentheses which allow Python to automatically concatenate the string literals that are next to each other. Each part of the string is on a new line, ensuring that no line goes over the 79-character limit.
 
+- Site Crash when user send a message in thread when not login
+
+    ![screenshot](documentation/bugs/bug02.png)
+
+    -To fix this need to implement **{% if user.is_authenticated %}** in thread.html to ensure user need to be log in
 
 > [!NOTE]  
 > There are no remaining bugs that I am aware of.
